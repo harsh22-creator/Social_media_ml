@@ -14,30 +14,33 @@ st.set_page_config(
 
 st.markdown("""
 <style>
-#MainMenu {visibility: hidden;}
-footer {visibility: hidden;}
-header {visibility: hidden;}
-.stDeployButton {display: none;}
-a[href*="github"] {display: none;}
+#MainMenu {display: none !important; visibility: hidden !important;}
+footer {display: none !important; visibility: hidden !important;}
+header {display: none !important; visibility: hidden !important;}
+.stDeployButton {display: none !important;}
+a[href*="github"] {display: none !important;}
 [data-testid="stToolbar"] {display: none !important;}
 [data-testid="stDecoration"] {display: none !important;}
 [data-testid="stStatusWidget"] {display: none !important;}
+[data-testid="stBottomBlockContainer"] {display: none !important;}
+[data-testid="manage-app-button"] {display: none !important;}
+[data-testid="stAppViewBlockContainer"] > div:last-child {display: none !important;}
 .viewerBadge_container__1QSob {display: none !important;}
 .viewerBadge_link__1S137 {display: none !important;}
 #stDecoration {display: none !important;}
 div[data-testid="stBottom"] {display: none !important;}
-.block-container {padding-top: 1.5rem !important; padding-bottom: 1rem !important;}
-.stSlider > div {padding-bottom: 0 !important;}
-
-[data-testid="stBottomBlockContainer"] {display: none !important;}
 .st-emotion-cache-1dp5vir {display: none !important;}
 .st-emotion-cache-nakbow {display: none !important;}
-iframe {display: none !important;}
-#corners {display: none !important;}
+.st-emotion-cache-h4xjwg {display: none !important;}
+.st-emotion-cache-czk5ss {display: none !important;}
 button[kind="icon"] {display: none !important;}
-[data-testid="manage-app-button"] {display: none !important;}
 .stAppDeployButton {display: none !important;}
-section[data-testid="stSidebar"] + div > div:last-child {display: none !important;}
+.streamlit-footer {display: none !important;}
+.css-1lsmgbg {display: none !important;}
+.css-14xtw13 {display: none !important;}
+.e8zbici0 {display: none !important;}
+.e1fqkh3o4 {display: none !important;}
+.block-container {padding-top: 1.5rem !important; padding-bottom: 1rem !important;}
 </style>
 """, unsafe_allow_html=True)
 
