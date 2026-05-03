@@ -41,6 +41,7 @@ button[kind="icon"] {display: none !important;}
 .e8zbici0 {display: none !important;}
 .e1fqkh3o4 {display: none !important;}
 .block-container {padding-top: 1.5rem !important; padding-bottom: 1rem !important;}
+.stSlider > div {padding-bottom: 0 !important;}
 </style>
 """, unsafe_allow_html=True)
 
@@ -134,7 +135,7 @@ st.markdown("---")
 predict_btn = st.button("🔍 Analyze My Digital Health", use_container_width=True)
 
 if predict_btn:
-    with st.spinner("Running AI analysis..."):
+    with st.spinner("⏳ Running AI analysis... please wait"):
         gender_enc = le_dict['gender'].transform([gender])[0]
         stress_enc = le_dict['stress_level'].transform([stress_level])[0]
         academic_enc = le_dict['academic_work_impact'].transform([academic_work_impact])[0]
@@ -161,6 +162,19 @@ if predict_btn:
         if notifications_per_day > 300: score -= 15
         if app_opens_per_day > 150: score -= 10
         score = max(score, 0)
+
+    # ── Auto Scroll to Results ────────────────────────────
+    st.markdown("""
+        <div id="results-section"></div>
+        <script>
+            setTimeout(function() {
+                document.getElementById('results-section').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }, 300);
+        </script>
+    """, unsafe_allow_html=True)
 
     # ── Results ───────────────────────────────────────────
     st.markdown("### 📊 Your Results")
