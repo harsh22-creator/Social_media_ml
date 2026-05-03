@@ -13,7 +13,7 @@ st.set_page_config(
     layout="centered"
 )
 
-# ── Hide GitHub icon, footer, header ─────────────────────
+# ── Hide All Branding ─────────────────────────────────────
 hide_menu = """
 <style>
 #MainMenu {visibility: hidden;}
@@ -21,6 +21,16 @@ footer {visibility: hidden;}
 header {visibility: hidden;}
 .stDeployButton {display: none;}
 a[href*="github"] {display: none;}
+
+/* Hide Streamlit branding & watermark */
+[data-testid="stToolbar"] {display: none !important;}
+[data-testid="stDecoration"] {display: none !important;}
+[data-testid="stStatusWidget"] {display: none !important;}
+.viewerBadge_container__1QSob {display: none !important;}
+.viewerBadge_link__1S137 {display: none !important;}
+#stDecoration {display: none !important;}
+.streamlit-footer {display: none !important;}
+div[data-testid="stBottom"] {display: none !important;}
 </style>
 """
 st.markdown(hide_menu, unsafe_allow_html=True)
@@ -189,6 +199,6 @@ if predict_btn:
 # ── Footer ────────────────────────────────────────────────
 st.markdown("---")
 st.markdown(
-    "<p style='text-align:center; color:gray;'>Made with ❤️ using Streamlit & Scikit-learn</p>",
+    "<p style='text-align:center; color:gray;'>Made with ❤️ using ML & Python</p>",
     unsafe_allow_html=True
 )
