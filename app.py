@@ -181,8 +181,10 @@ if predict_btn:
     r1, r2, r3 = st.columns(3)
 
     with r1:
-        if addiction_pred == 1:
+        if addiction_pred == 1 or score < 60:
             st.error("🚨 **ADDICTED**\n\nSigns of social media addiction detected")
+        elif score < 80:
+            st.warning("⚠️ **AT RISK**\n\nYour usage needs improvement")
         else:
             st.success("✅ **HEALTHY**\n\nYour usage is within healthy limits")
 
