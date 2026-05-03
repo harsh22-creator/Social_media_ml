@@ -218,15 +218,30 @@ if predict_btn:
         st.progress(min(int((work_study_hours / 12) * 100), 100))
 
     # ── Tips ──────────────────────────────────────────────
+    # ── Tips ──────────────────────────────────────────────
     st.markdown("### 💡 Recommendations")
-    if addiction_pred == 1:
+
+    if addiction_pred == 1 or score < 60:
+        st.error("🚨 Your digital habits need serious attention!")
         st.warning("👉 Limit social media to 1–2 hours per day")
         st.warning("👉 Take a screen break every 30 minutes")
-        st.warning("👉 Turn off non-essential notifications")
-        st.warning("👉 Try a digital detox on weekends")
-        st.warning("👉 Use app timers to monitor usage")
+        st.warning("👉 Turn off all non-essential notifications")
+        st.warning("👉 Try a full digital detox on weekends")
+        st.warning("👉 Use app timers to strictly monitor usage")
+        st.warning("👉 Avoid using phone 1 hour before sleep")
+        st.warning("👉 Consider talking to a counselor if needed")
+
+    elif score < 80:
+        st.warning("⚠️ Your habits are okay but need improvement!")
+        st.warning("👉 Try to reduce social media by 30 minutes daily")
+        st.warning("👉 Set a phone curfew after 10 PM")
+        st.warning("👉 Reduce notifications to only important apps")
+        st.warning("👉 Add 30 more minutes of sleep to your routine")
+        st.info("💡 Small changes now will make a big difference!")
+
     else:
+        st.success("🏆 Excellent digital habits — keep it up!")
         st.success("👍 Keep maintaining healthy screen time habits")
         st.success("👍 Continue your good sleep schedule")
         st.success("👍 Stay productive with work/study balance")
-        st.success("👍 You are doing great — keep it up!")
+        st.success("👍 You are a great example of healthy tech usage!")
